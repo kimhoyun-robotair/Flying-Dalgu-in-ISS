@@ -1,0 +1,219 @@
+[
+  {
+    "source": "media/flying_dalgu_in_iss_iss/meshes/cupola.dae",
+    "source_sha256": "ddb82187120e03db4b36625913d53ce9ce4c6b35c55f433d94d3d94a6e2602d6",
+    "usd": "assets/iss/cupola.usdc",
+    "default_prim": "/Asset",
+    "meters_per_unit": 1,
+    "up_axis": "Z",
+    "mesh_count": 1,
+    "triangles": 26789,
+    "points": 13772,
+    "bounds_min": [
+      -1.459452227392915,
+      -1.3867590116550588,
+      -0.008715433933257908
+    ],
+    "bounds_max": [
+      1.4407784260950478,
+      1.4079700243723021,
+      1.5927292165669824
+    ],
+    "textures": [
+      "textures/Cupola_Int_Diffuse.png",
+      "textures/Generic_Intersection.png",
+      "textures/Generic_Misc_Details.png"
+    ],
+    "source_triangle_count": 26789,
+    "omitted_line_segments": 0,
+    "omitted_source_cameras_lights": true
+  },
+  {
+    "source": "media/flying_dalgu_in_iss_iss/meshes/eu_lab.dae",
+    "source_sha256": "e6bf08f4dd42eef73e0eba88a4e41f1679e55fad2f308a961016f0c7545bcca8",
+    "usd": "assets/iss/eu_lab.usdc",
+    "default_prim": "/Asset",
+    "meters_per_unit": 1,
+    "up_axis": "Z",
+    "mesh_count": 1,
+    "triangles": 4088,
+    "points": 3637,
+    "bounds_min": [
+      -1.799002562256955,
+      0.001055221865898721,
+      -2.0321123784642823
+    ],
+    "bounds_max": [
+      1.7993735004395106,
+      6.02808494575407,
+      1.1570884413556712
+    ],
+    "textures": [
+      "textures/Columbus_01.png",
+      "textures/Columbus_02.png",
+      "textures/Columbus_03.png",
+      "textures/Columbus_Bulkhead.png",
+      "textures/Generic_Intersection.png",
+      "textures/Generic_Misc_Details.png",
+      "textures/JPM_Bulkhead.png"
+    ],
+    "source_triangle_count": 4088,
+    "omitted_line_segments": 0,
+    "omitted_source_cameras_lights": true
+  },
+  {
+    "source": "media/flying_dalgu_in_iss_iss/meshes/jpm.dae",
+    "source_sha256": "32c7620070b07339d5c3392770f8f97f58b6ba2195a0f5ecec9c21c465a89015",
+    "usd": "assets/iss/jpm.usdc",
+    "default_prim": "/Asset",
+    "meters_per_unit": 1,
+    "up_axis": "Z",
+    "mesh_count": 1,
+    "triangles": 20458,
+    "points": 12331,
+    "bounds_min": [
+      -0.0012469799921173547,
+      -1.4289058212498493,
+      -1.1953792962611876
+    ],
+    "bounds_max": [
+      10.173529158845117,
+      1.4320938367022398,
+      1.8829448724899671
+    ],
+    "textures": [
+      "textures/Airlock_externalDoor_inside.png",
+      "textures/Generic_Intersection.png",
+      "textures/JPM_Bulkhead.png",
+      "textures/JPM_Racks_01.png",
+      "textures/JPM_Racks_02.png",
+      "textures/JPM_Racks_03.png"
+    ],
+    "source_triangle_count": 20458,
+    "omitted_line_segments": 4,
+    "omitted_source_cameras_lights": true
+  },
+  {
+    "source": "media/flying_dalgu_in_iss_iss/meshes/node_1.dae",
+    "source_sha256": "84f749677719c6afcec7057601dd6b284125043c1b6e964a24709127a51514c7",
+    "usd": "assets/iss/node_1.usdc",
+    "default_prim": "/Asset",
+    "meters_per_unit": 1,
+    "up_axis": "Z",
+    "mesh_count": 1,
+    "triangles": 26142,
+    "points": 16221,
+    "bounds_min": [
+      -3.0519025903936123,
+      -2.772417064279588,
+      -2.7643113736832365
+    ],
+    "bounds_max": [
+      2.139410906843507,
+      2.766295343931863,
+      2.772341719020387
+    ],
+    "textures": [
+      "textures/Generic_Intersection.png",
+      "textures/Generic_Misc_Details.png",
+      "textures/Node1_Bulkhead.png",
+      "textures/Node1_Rack.png"
+    ],
+    "source_triangle_count": 26142,
+    "omitted_line_segments": 0,
+    "omitted_source_cameras_lights": true
+  },
+  {
+    "source": "media/flying_dalgu_in_iss_iss/meshes/node_2.dae",
+    "source_sha256": "6d3909ae2db57c8a1205e480c6500af1233fb251eab3e9ca2d53b664879f610b",
+    "usd": "assets/iss/node_2.usdc",
+    "default_prim": "/Asset",
+    "meters_per_unit": 1,
+    "up_axis": "Z",
+    "mesh_count": 1,
+    "triangles": 31365,
+    "points": 19429,
+    "bounds_min": [
+      -4.532114028930664,
+      -2.1217607188425576,
+      -1.8632898963724387
+    ],
+    "bounds_max": [
+      1.8878620147705079,
+      2.124451790654327,
+      1.879658763387179
+    ],
+    "textures": [
+      "textures/Generic_Intersection.png",
+      "textures/Generic_Misc_Details.png",
+      "textures/Node2_Bulkheads.png",
+      "textures/Node2_Interior_Racks.png"
+    ],
+    "source_triangle_count": 31365,
+    "omitted_line_segments": 0,
+    "omitted_source_cameras_lights": true
+  },
+  {
+    "source": "media/flying_dalgu_in_iss_iss/meshes/node_3.dae",
+    "source_sha256": "ec20cf442a86cbe77b44eb8dc1fe9a8cba8637cc34830694e6391aa1ed9ca7d8",
+    "usd": "assets/iss/node_3.usdc",
+    "default_prim": "/Asset",
+    "meters_per_unit": 1,
+    "up_axis": "Z",
+    "mesh_count": 1,
+    "triangles": 31554,
+    "points": 19186,
+    "bounds_min": [
+      -1.773469295213405,
+      -1.7969159074453822,
+      -1.7735387573378256
+    ],
+    "bounds_max": [
+      1.7891371533114642,
+      4.08587196992869,
+      1.7891189389121014
+    ],
+    "textures": [
+      "textures/Generic_Intersection.png",
+      "textures/Node3_Bulkhead.png",
+      "textures/Node3_Rack_01.png",
+      "textures/Node3_Rack_02.png"
+    ],
+    "source_triangle_count": 31554,
+    "omitted_line_segments": 0,
+    "omitted_source_cameras_lights": true
+  },
+  {
+    "source": "media/flying_dalgu_in_iss_iss/meshes/us_lab.dae",
+    "source_sha256": "8ed479d914c07611f83cf7e2b6b90fd54cc538feb585314c87c34931f6b8059b",
+    "usd": "assets/iss/us_lab.usdc",
+    "default_prim": "/Asset",
+    "meters_per_unit": 1,
+    "up_axis": "Z",
+    "mesh_count": 1,
+    "triangles": 25126,
+    "points": 16654,
+    "bounds_min": [
+      -7.735807275772516,
+      -1.2018860585314817,
+      -1.9395628215802676
+    ],
+    "bounds_max": [
+      -0.0012312344279623928,
+      1.9112603392338077,
+      1.5684822102851022
+    ],
+    "textures": [
+      "textures/Generic_Intersection.png",
+      "textures/Generic_Misc_Details.png",
+      "textures/USLab_FWD_Bulkhead.png",
+      "textures/USLab_Racks_02.png",
+      "textures/Untitled.002.png",
+      "textures/Untitled.004.png",
+      "textures/Untitled.005.png"
+    ],
+    "source_triangle_count": 25126,
+    "omitted_line_segments": 0,
+    "omitted_source_cameras_lights": true
+  }
+]

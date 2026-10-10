@@ -1,0 +1,66 @@
+{
+  "project": "Flying-Dalgu-in-ISS",
+  "reference": "20261009_155203.jpg",
+  "reference_sha256": "d673842b3523cf56d42b321090386f02815ec083b8c4115858bad8284e66e4cc",
+  "references": [
+    "20261009_155157.jpg",
+    "20261009_155203.jpg",
+    "20261009_155209.jpg",
+    "20261009_155213.jpg",
+    "dalgu_1",
+    "dalgu_2",
+    "dalgu_3.png",
+    "dalgu_smooth.jpg",
+    "dalgu_illustration.png",
+    "dalgu.jpeg"
+  ],
+  "reference_hashes": {
+    "20261009_155157.jpg": "038cad4815243f48374f269ad3de50a76475ea6770783bdc322e547ad2b5a0f8",
+    "20261009_155203.jpg": "d673842b3523cf56d42b321090386f02815ec083b8c4115858bad8284e66e4cc",
+    "20261009_155209.jpg": "96c480e611b637df6184f63acdb105e59269fd07e6d287a1bbb27d09cef1ab6a",
+    "20261009_155213.jpg": "4374f7cd5638c25af6be1a5e129ce1344cc791b29d20618e82f8a784996f19f1",
+    "dalgu_1": "a95d6c8fc983f2b9c4c315b0db518aecff61b2ee2777b9b8dd71c6627ed69461",
+    "dalgu_2": "b5cae160374fbbdd23a7aa72bd8e186d7aeb15e73d74d5ddbeb4cf72fe8d0142",
+    "dalgu_3.png": "15ade9f9c7c352e468224ab05074d4432cf23b47f729e52677ad0d8032f7f94e",
+    "dalgu_smooth.jpg": "e3adf0c1da5076bbee1791c3a9521d56426aabfc22bbb2d981918e1d2860d3f9",
+    "dalgu_illustration.png": "91e7c49ec6818755c641bb0391bbe51ca20f5c420052a7267813b575bc9e0f41",
+    "dalgu.jpeg": "5f248d6e701ae25870dc3aeddf30b66aadca9adb016ca7fa0bed864e222bba1b"
+  },
+  "face_revision": "rounded_deep_occiput_and_heart_paws_v4",
+  "paw_design": "Continuous blue mittens, wrist-facing cleft in each heart pad, three smaller distal oval pads fitted to the surface",
+  "blend": "assets/dalgu/dalgu_astronaut.blend",
+  "visual_usd": "assets/dalgu/dalgu_visual.usdc",
+  "triangles": 636960,
+  "vertices": 411824,
+  "mesh_objects": 266,
+  "materials": 19,
+  "up_axis": "Z",
+  "forward_axis": "-Y",
+  "units": "m",
+  "helmet": false,
+  "skeletal_animation": false,
+  "method": "Blender native mesh/Bezier modelling; evaluated geometry exported with OpenUSD because system Blender was compiled without USD",
+  "usd": "assets/dalgu/dalgu.usd",
+  "physics_source": "assets/dalgu/dalgu.usda",
+  "default_prim": "/Dalgu",
+  "pivot": "visual bounding box centre",
+  "source_pivot_m": [
+    1.4424324035644531e-05,
+    0.07362029701471329,
+    0.34829503297805786
+  ],
+  "bounds_min_m": [
+    -0.2773301601409912,
+    -0.25248145312070847,
+    -0.3471950311213732
+  ],
+  "bounds_max_m": [
+    0.2773301601409912,
+    0.25248145312070847,
+    0.3471950311213732
+  ],
+  "height_m": 0.6943900622427464,
+  "mass_kg": 1,
+  "collider_count": 17,
+  "physics": "one dynamic rigid body, separate convex hull proxies; CCD"
+}

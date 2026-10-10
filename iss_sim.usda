@@ -1,0 +1,513 @@
+#usda 1.0
+(
+    customLayerData = {
+        dictionary cameraSettings = {
+            dictionary Perspective = {
+                double3 position = (2, 0, 4.85)
+                double3 target = (4.4, 0, 4.85)
+            }
+            string boundCamera = "/World/InteriorCamera"
+        }
+        dictionary issSimulation = {
+            double3 camera = (2, 0, 4.85)
+            string description = "Zero gravity; static two-sided triangle ISS; dynamic drifting Dalgu"
+            int physicsHz = 120
+            double3 spawn = (4, 0, 4.85)
+        }
+    }
+    defaultPrim = "World"
+    endTimeCode = 36000
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    startTimeCode = 0
+    timeCodesPerSecond = 60
+    upAxis = "Z"
+)
+
+def Xform "World"
+{
+    def PhysicsScene "PhysicsScene" (
+        prepend apiSchemas = ["PhysxSceneAPI"]
+    )
+    {
+        vector3f physics:gravityDirection = (0, 0, -1)
+        float physics:gravityMagnitude = 0
+        token physxScene:broadphaseType = "MBP"
+        bool physxScene:enableCCD = 1
+        bool physxScene:enableGPUDynamics = 0
+        token physxScene:solverType = "TGS"
+        uint physxScene:timeStepsPerSecond = 120
+    }
+
+    def "Materials"
+    {
+        def Material "Contact" (
+            prepend apiSchemas = ["PhysicsMaterialAPI", "PhysxMaterialAPI"]
+        )
+        {
+            float physics:dynamicFriction = 0.25
+            float physics:restitution = 0.65
+            float physics:staticFriction = 0.35
+            token physxMaterial:restitutionCombineMode = "max"
+        }
+    }
+
+    def Xform "ISS"
+    {
+        def Xform "Visuals"
+        {
+            def Xform "cupola"
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-4.4586144, -6.8356992, 6.8434244)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+
+                def Xform "Asset" (
+                    prepend references = @./assets/iss/cupola.usdc@
+                )
+                {
+                    over "Cupola_Int_Cabin"
+                    {
+                        over "Mesh"
+                        {
+                            uniform bool doubleSided = 1
+                            uniform token subdivisionScheme = "none"
+                        }
+                    }
+                }
+            }
+
+            def Xform "eu_lab"
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (10.9325664, 2.3509732, 4.8505872)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+
+                def Xform "Asset" (
+                    prepend references = @./assets/iss/eu_lab.usdc@
+                )
+                {
+                    over "Module_Connect_004"
+                    {
+                        over "Mesh"
+                        {
+                            uniform bool doubleSided = 1
+                            uniform token subdivisionScheme = "none"
+                        }
+                    }
+                }
+            }
+
+            def Xform "jpm"
+            {
+                float3 xformOp:rotateXYZ = (179.99469, 0, -89.999985)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (10.9358938, -2.3364698, 4.8505872)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+
+                def Xform "Asset" (
+                    prepend references = @./assets/iss/jpm.usdc@
+                )
+                {
+                    over "JPM_CollapsedForUnity_Starboard"
+                    {
+                        over "Mesh"
+                        {
+                            uniform bool doubleSided = 1
+                            uniform token subdivisionScheme = "none"
+                        }
+                    }
+                }
+            }
+
+            def Xform "node_1"
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-4.4630848, -0.0027432, 4.8508666)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+
+                def Xform "Asset" (
+                    prepend references = @./assets/iss/node_1.usdc@
+                )
+                {
+                    over "Node1_Int_Metal_Hatch_Zenith"
+                    {
+                        over "Mesh"
+                        {
+                            uniform bool doubleSided = 1
+                            uniform token subdivisionScheme = "none"
+                        }
+                    }
+                }
+            }
+
+            def Xform "node_2"
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (10.9744206, -0.0112558, 4.8358958)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+
+                def Xform "Asset" (
+                    prepend references = @./assets/iss/node_2.usdc@
+                )
+                {
+                    over "Node2_Int_Hub_ZNH"
+                    {
+                        over "Mesh"
+                        {
+                            uniform bool doubleSided = 1
+                            uniform token subdivisionScheme = "none"
+                        }
+                    }
+                }
+            }
+
+            def Xform "node_3"
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-4.4586144, -6.6356992, 4.8434244)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+
+                def Xform "Asset" (
+                    prepend references = @./assets/iss/node_3.usdc@
+                )
+                {
+                    over "Node3_Int__Bulkhead_SBD"
+                    {
+                        over "Mesh"
+                        {
+                            uniform bool doubleSided = 1
+                            uniform token subdivisionScheme = "none"
+                        }
+                    }
+                }
+            }
+
+            def Xform "us_lab"
+            {
+                float3 xformOp:rotateXYZ = (179.99469, 0, 0)
+                float3 xformOp:scale = (1.0858, 1.0858, 1.0858)
+                double3 xformOp:translate = (6.3085472, 0.006477, 4.834892)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+
+                def Xform "Asset" (
+                    prepend references = @./assets/iss/us_lab.usdc@
+                )
+                {
+                    over "US_Lab_Int_AFT_Bulkhead"
+                    {
+                        over "Mesh"
+                        {
+                            uniform bool doubleSided = 1
+                            uniform token subdivisionScheme = "none"
+                        }
+                    }
+                }
+            }
+        }
+
+        def Xform "Collisions" (
+            prepend references = @./assets/iss_collisions.usdc@
+        )
+        {
+            over "cupola_0" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </World/Materials/Contact>
+                uniform token physics:approximation = "none"
+                bool physics:collisionEnabled = 1
+                float physxCollision:contactOffset = 0.005
+                float physxCollision:restOffset = 0
+            }
+
+            over "eu_lab_0" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </World/Materials/Contact>
+                uniform token physics:approximation = "none"
+                bool physics:collisionEnabled = 1
+                float physxCollision:contactOffset = 0.005
+                float physxCollision:restOffset = 0
+            }
+
+            over "jpm_0" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </World/Materials/Contact>
+                uniform token physics:approximation = "none"
+                bool physics:collisionEnabled = 1
+                float physxCollision:contactOffset = 0.005
+                float physxCollision:restOffset = 0
+            }
+
+            over "node_1_0" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </World/Materials/Contact>
+                uniform token physics:approximation = "none"
+                bool physics:collisionEnabled = 1
+                float physxCollision:contactOffset = 0.005
+                float physxCollision:restOffset = 0
+            }
+
+            over "node_2_0" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </World/Materials/Contact>
+                uniform token physics:approximation = "none"
+                bool physics:collisionEnabled = 1
+                float physxCollision:contactOffset = 0.005
+                float physxCollision:restOffset = 0
+            }
+
+            over "node_3_0" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </World/Materials/Contact>
+                uniform token physics:approximation = "none"
+                bool physics:collisionEnabled = 1
+                float physxCollision:contactOffset = 0.005
+                float physxCollision:restOffset = 0
+            }
+
+            over "us_lab_0" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </World/Materials/Contact>
+                uniform token physics:approximation = "none"
+                bool physics:collisionEnabled = 1
+                float physxCollision:contactOffset = 0.005
+                float physxCollision:restOffset = 0
+            }
+        }
+    }
+
+    def Xform "Dalgu" (
+        prepend references = @./assets/dalgu/dalgu.usd@
+    )
+    {
+        vector3f physics:angularVelocity = (0, 0, 5)
+        vector3f physics:velocity = (0.08, 0.025, 0.012)
+        quatf xformOp:orient = (0.70710677, -0, -0, -0.70710677)
+        float3 xformOp:scale = (0.9360733, 0.9360733, 0.9360733)
+        double3 xformOp:translate = (4, 0, 4.85)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def Camera "InteriorCamera"
+    {
+        float2 clippingRange = (0.01, 150)
+        float focalLength = 22
+        float focusDistance = 2
+        float horizontalAperture = 36
+        float verticalAperture = 20.25
+        matrix4d xformOp:transform = ( (0, -1, 0, 0), (0, 0, 1, 0), (-1, -0, 0, 0), (2, 0, 4.85, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Xform "Lights"
+    {
+        def SphereLight "Cabin_00"
+        {
+            color3f inputs:color = (1, 0.96, 0.9)
+            float inputs:intensity = 12000
+            bool inputs:normalize = 1
+            float inputs:radius = 0.18
+            double3 xformOp:translate = (-1, 0, 5.55)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def SphereLight "Cabin_01"
+        {
+            color3f inputs:color = (1, 0.96, 0.9)
+            float inputs:intensity = 12000
+            bool inputs:normalize = 1
+            float inputs:radius = 0.18
+            double3 xformOp:translate = (1, 0, 5.55)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def SphereLight "Cabin_02"
+        {
+            color3f inputs:color = (1, 0.96, 0.9)
+            float inputs:intensity = 12000
+            bool inputs:normalize = 1
+            float inputs:radius = 0.18
+            double3 xformOp:translate = (3, 0, 5.55)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def SphereLight "Cabin_03"
+        {
+            color3f inputs:color = (1, 0.96, 0.9)
+            float inputs:intensity = 12000
+            bool inputs:normalize = 1
+            float inputs:radius = 0.18
+            double3 xformOp:translate = (5, 0, 5.55)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def SphereLight "Cabin_04"
+        {
+            color3f inputs:color = (1, 0.96, 0.9)
+            float inputs:intensity = 12000
+            bool inputs:normalize = 1
+            float inputs:radius = 0.18
+            double3 xformOp:translate = (7.2, 0, 5.55)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def SphereLight "Cabin_05"
+        {
+            color3f inputs:color = (1, 0.96, 0.9)
+            float inputs:intensity = 12000
+            bool inputs:normalize = 1
+            float inputs:radius = 0.18
+            double3 xformOp:translate = (9, 0, 5.55)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def SphereLight "Cabin_06"
+        {
+            color3f inputs:color = (1, 0.96, 0.9)
+            float inputs:intensity = 12000
+            bool inputs:normalize = 1
+            float inputs:radius = 0.18
+            double3 xformOp:translate = (11, 0, 5.55)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def SphereLight "Cabin_07"
+        {
+            color3f inputs:color = (1, 0.96, 0.9)
+            float inputs:intensity = 12000
+            bool inputs:normalize = 1
+            float inputs:radius = 0.18
+            double3 xformOp:translate = (-4.46, 0, 5.6)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def SphereLight "Cabin_08"
+        {
+            color3f inputs:color = (1, 0.96, 0.9)
+            float inputs:intensity = 12000
+            bool inputs:normalize = 1
+            float inputs:radius = 0.18
+            double3 xformOp:translate = (-4.46, -3, 5.6)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def SphereLight "Cabin_09"
+        {
+            color3f inputs:color = (1, 0.96, 0.9)
+            float inputs:intensity = 12000
+            bool inputs:normalize = 1
+            float inputs:radius = 0.18
+            double3 xformOp:translate = (-4.46, -6.6, 5.6)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def SphereLight "Cabin_10"
+        {
+            color3f inputs:color = (1, 0.96, 0.9)
+            float inputs:intensity = 12000
+            bool inputs:normalize = 1
+            float inputs:radius = 0.18
+            double3 xformOp:translate = (10.94, -10, 5.55)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def SphereLight "Cabin_11"
+        {
+            color3f inputs:color = (1, 0.96, 0.9)
+            float inputs:intensity = 12000
+            bool inputs:normalize = 1
+            float inputs:radius = 0.18
+            double3 xformOp:translate = (10.94, -7.5, 5.55)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def SphereLight "Cabin_12"
+        {
+            color3f inputs:color = (1, 0.96, 0.9)
+            float inputs:intensity = 12000
+            bool inputs:normalize = 1
+            float inputs:radius = 0.18
+            double3 xformOp:translate = (10.94, -5, 5.55)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def SphereLight "Cabin_13"
+        {
+            color3f inputs:color = (1, 0.96, 0.9)
+            float inputs:intensity = 12000
+            bool inputs:normalize = 1
+            float inputs:radius = 0.18
+            double3 xformOp:translate = (10.94, -2.5, 5.55)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def SphereLight "Cabin_14"
+        {
+            color3f inputs:color = (1, 0.96, 0.9)
+            float inputs:intensity = 12000
+            bool inputs:normalize = 1
+            float inputs:radius = 0.18
+            double3 xformOp:translate = (10.94, 2.5, 5.55)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def SphereLight "Cabin_15"
+        {
+            color3f inputs:color = (1, 0.96, 0.9)
+            float inputs:intensity = 12000
+            bool inputs:normalize = 1
+            float inputs:radius = 0.18
+            double3 xformOp:translate = (10.94, 5, 5.55)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def SphereLight "Cabin_16"
+        {
+            color3f inputs:color = (1, 0.96, 0.9)
+            float inputs:intensity = 12000
+            bool inputs:normalize = 1
+            float inputs:radius = 0.18
+            double3 xformOp:translate = (10.94, 7, 5.55)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def SphereLight "Cabin_17"
+        {
+            color3f inputs:color = (1, 0.96, 0.9)
+            float inputs:intensity = 12000
+            bool inputs:normalize = 1
+            float inputs:radius = 0.18
+            double3 xformOp:translate = (-4.46, -6.8, 7)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def DomeLight "ExteriorFill"
+        {
+            color3f inputs:color = (0.12, 0.16, 0.25)
+            float inputs:intensity = 30
+        }
+    }
+
+    def Xform "Robots"
+    {
+    }
+}
+

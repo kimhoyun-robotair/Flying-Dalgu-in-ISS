@@ -1,5 +1,7 @@
 # Flying-Dalgu-in-ISS
 
+![Dalgu drifting inside the ISS in Isaac Sim](docs/media/dalgu-iss.gif)
+
 ## Running the Simulation
 
 Tested on Ubuntu 24.04 LTS with Isaac Sim 5.1.
